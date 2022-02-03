@@ -7,7 +7,7 @@ from django.contrib import messages
 from .forms import CreateUserForm
 
 def index(request):
-    return render(request, "guildboard/index.html")
+    return render(request, "guildboard/addcharacter.html")
 
 def loginView(request):
 
@@ -45,3 +45,6 @@ def registerView(request):
 def logoutView(request):
     logout(request)
     return redirect("login")
+
+def addCharacter(request):
+    pass
