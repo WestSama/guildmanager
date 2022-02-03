@@ -17,15 +17,15 @@ class Guild(models.Model):
         return f"{self.guildName}"  
 
 class Character(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=64)
-    iLevel = models.IntegerField()
-    guildRole = models.CharField(max_length=64, default="")
-    className = models.ForeignKey(Classe, on_delete=models.CASCADE)
-    guild = models.ForeignKey(Guild, on_delete=models.CASCADE, default="")
+    iLevel = models.IntegerField(null=False)
+    guildRole = models.CharField(max_length=64, default="Member")
+    classe = models.CharField(max_length=64, default="")
+    guild = models.ForeignKey(Guild, on_delete=models.CASCADE, blank=True, null=True)
     
     def __str__(self):
-        return f"Owner: {self.user} Name:{self.name} iLevel:{self.iLevel} Class: {self.className} Guild: {self.guild}"
+        return f"Owner: {self.user} Name:{self.name} iLevel:{self.iLevel} Class: {self.classe} Guild: {self.guild}"
 
    
 class Content(models.Model):

@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
-
+from django.urls import reverse
 from django.contrib import messages
+
+from guildboard.models import Character, Classe
 
 from .forms import CreateUserForm
 
@@ -47,4 +49,23 @@ def logoutView(request):
     return redirect("login")
 
 def addCharacter(request):
-    pass
+
+    if request.method == "POST":
+        name = request.POST["charName"]
+        iLvl = request.POST["iLevel"]
+        classe = request.POST["class"]
+        user = request.user
+        
+        character = Character.objects.create(
+            name = name,
+            iLevel = iLvl,
+            classe = classe,
+            user = user
+        )
+        
+        character.save()
+        messages.success(request, "Your character has been added successfully!")
+        return redirect(reverse("addCharacter"))
+
+    context = {"classes" : Classe.objects.all()}    
+    return render(request, "guildboard/addcharacter.html", context)   
