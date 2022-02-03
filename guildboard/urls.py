@@ -10,5 +10,7 @@ urlpatterns = [
     path("logout/", views.logoutView, name="logout"),
 
     path("addcharacter/", views.addCharacter, name="addCharacter"),
+    path("updatechar/<str:pk>/", views.updateChar, name="updatechar"),
+    path("deletechar/<str:pk>/", views.deleteChar, name="deletechar"),
 
 ]

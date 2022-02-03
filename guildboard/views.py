@@ -6,10 +6,13 @@ from django.contrib import messages
 
 from guildboard.models import Character, Classe
 
-from .forms import CreateUserForm
+from .forms import CreateUserForm, CharacterForm
 
 def index(request):
-    return render(request, "guildboard/addcharacter.html")
+    context = {
+        "chars":Character.objects.all()
+    }
+    return render(request, "guildboard/index.html", context)
 
 def loginView(request):
 
@@ -69,3 +72,20 @@ def addCharacter(request):
 
     context = {"classes" : Classe.objects.all()}    
     return render(request, "guildboard/addcharacter.html", context)   
+
+def updateChar(request, pk):
+    
+    char = Character.objects.get(id=pk)
+    form = CharacterForm(instance=char)
+
+    if request.method == "POST":
+        form = CharacterForm(request.POST, instance=char)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+
+    context = {"form":form}
+    return render(request, "guildboard/updatechar.html", context)
+
+def deleteChar(request, pk):
+    pass

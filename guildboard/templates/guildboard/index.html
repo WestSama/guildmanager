@@ -1,106 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "guildboard/layout.html" %}
+{% block pageTitle %}{% endblock %}
+{% block pageInfo %}{% endblock %}
 
+{% block title %}Main Page{% endblock %}
+
+{% block body %}
 {% load static %}
-    <head>
-        {% include "guildboard/head-layout.html" %}
-        <title>Dashboard - SB Admin</title>
-    </head>
-    <body class="sb-nav-fixed">
-        {% include "guildboard/navbar.html" %}
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                DataTable Example
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>PlaceHolderName</th>
-                                            <th>PlaceHolderPosition</th>
-                                            <th>PlaceHolderOffice</th>
-                                            <th>PlaceHolderAge</th>
-                                            <th>PlaceHolderStart date</th>
-                                            <th>PlaceHolderSalary</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>PlaceHolderName</th>
-                                            <th>PlaceHolderPosition</th>
-                                            <th>PlaceHolderOffice</th>
-                                            <th>PlaceHolderAge</th>
-                                            <th>PlaceHolderStart date</th>
-                                            <th>PlaceHolderSalary</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>PlaceHolder</td>
-                                            <td>PlaceHolder</td>
-                                            <td>PlaceHolder</td>
-                                            <td>PlaceHolder</td>
-                                            <td>PlaceHolder</td>
-                                            <td>PlaceHolder</td>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+<div style="display: flex; flex-wrap: wrap;">
+{% for char in chars %}
+<div class="card mb-3 ms-3" style="max-width: 500px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="static\guildboard\assets\img\{{char.classe}}.png" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ char.name }}</h5>
+          <hr>
+          <h6 class="card-text">iLevel: {{ char.iLevel }}</h6>
+          <h6 class="card-text">Guild: {{ char.guild }}</h6>
+          <h6 class="card-text">Guild Role: {{ char.guildRole }}</h6>
+          <hr>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: flex-end; ">         
+                <a href="{% url 'updatechar' char.id %}" class="btn btn-primary">Edit</a>
+                <input type="submit" value="Delete" class="btn btn-primary  ms-3">   
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% endblock %}
+
+<footer class="py-4 bg-light mt-auto">
+    <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+            <div>
+                <a href="#">Privacy Policy</a>
+                &middot;
+                <a href="#">Terms &amp; Conditions</a>
             </div>
         </div>
-        {% include "guildboard/modals-scripts.html" %}
-    </body>
+    </div>
+</footer>
 </html>

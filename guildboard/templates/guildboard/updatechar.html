@@ -1,0 +1,18 @@
+{% extends "guildboard/layout.html"%}
+
+{% block title %}Update Character{% endblock %}
+{% block pageTitle %}Update Character{% endblock %}
+{% block pageInfo %}Please fill the form according to your Character.{% endblock %}
+
+{% block body %}
+<form action="" method="POST" style="display: flex; flex-direction: column; width: 400px;">
+    {% csrf_token %}
+    <strong>{{ form.name.label }}</strong>
+    {{ form.name }}
+    <strong>{{ form.iLevel.label }}</strong>
+    {{ form.iLevel }}
+    <strong>{{ form.classe.label }}</strong>
+    {{ form.classe }}
+    <input class="btn btn-dark mt-3" type="submit" name="Submit">
+</form>
+{% endblock %}
