@@ -94,5 +94,10 @@ def deleteChar(request, pk):
     
     char = Character.objects.get(id=pk)
     char.delete()
-    
+
     return redirect("index")
+
+def wizzelsPage(request):
+    chars = Character.objects.all()
+    context = {"chars":chars}
+    return render(request, "guildboard/wizzels.html", context)

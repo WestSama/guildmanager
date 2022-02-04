@@ -13,4 +13,5 @@ urlpatterns = [
     path("updatechar/<str:pk>/", views.updateChar, name="updatechar"),
     path("deletechar/<str:pk>/", views.deleteChar, name="deletechar"),
 
+    path("wizzels/", views.wizzelsPage, name="wizzels"),
 ]

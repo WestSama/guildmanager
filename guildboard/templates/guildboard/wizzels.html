@@ -1,0 +1,62 @@
+{% extends "guildboard/layout.html" %}
+{% block pageTitle %}Wizzels{% endblock %}
+{% block pageInfo %}Main Guild{% endblock %}
+
+{% block title %}Wizzels{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Wizzels Members
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Owner</th>
+                    <th>CharacterName</th>
+                    <th>iLevel</th>
+                    <th>Class</th>
+                    <th>GuildRole</th>     
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Owner</th>
+                    <th>CharacterName</th>
+                    <th>iLevel</th>
+                    <th>Class</th>
+                    <th>GuildRole</th>      
+                </tr>
+            </tfoot>
+            <tbody>
+            {% for char in chars %}
+            {% if char.guild != Wizzels %}
+                <tr>
+                    <td>{{ char.user }}</td>
+                    <td>{{ char.name }}</td>
+                    <td>{{ char.iLevel }}</td>
+                    <td>{{ char.classe }}</td>
+                    <td>{{ char.guildRole }}</td>  
+                </tr>           
+            {% endif %}
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+    // Simple-DataTables
+    // https://github.com/fiduswriter/Simple-DataTables/wiki
+
+    const datatablesSimple = document.getElementById('datatablesSimple');
+    if (datatablesSimple) {
+        new simpleDatatables.DataTable(datatablesSimple);
+    }
+});
+</script>
+{% endblock %}
