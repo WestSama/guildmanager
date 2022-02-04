@@ -85,6 +85,7 @@ def updateChar(request, pk):
         form = CharacterForm(request.POST, instance=char)
         if form.is_valid():
             form.save()
+            messages.success(request, "Character has been updated!")
             return redirect('index')
 
     context = {"form":form}
