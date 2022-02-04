@@ -98,16 +98,16 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
-                        <a class="nav-link" href="charts.html">
+                        
+                        <div class="sb-sidenav-menu-heading">{% if user.is_superuser %}Addons{% endif %}</div>
+                        {% if user.is_superuser %}
+                        <a class="nav-link" href="/admin/guildboard/character">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Charts
+                            Admin Panel
                         </a>
-                        <a class="nav-link" href="tables.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
-                        </a>
-                    </div>
+                        {% endif %}
+                        </div>
+                        
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>

@@ -9,8 +9,9 @@ from guildboard.models import Character, Classe
 from .forms import CreateUserForm, CharacterForm
 
 def index(request):
+    user = request.user
     context = {
-        "chars":Character.objects.all()
+        "chars":Character.objects.filter(user=user)
     }
     return render(request, "guildboard/index.html", context)
 
