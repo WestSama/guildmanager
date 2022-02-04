@@ -59,16 +59,19 @@ def addCharacter(request):
         classe = request.POST["class"]
         user = request.user
         
-        character = Character.objects.create(
-            name = name,
-            iLevel = iLvl,
-            classe = classe,
-            user = user
-        )
-        
-        character.save()
-        messages.success(request, "Your character has been added successfully!")
-        return redirect(reverse("addCharacter"))
+        if Character.objects.filter(name=name).exists():
+            messages.error(request, "This character already exist.")
+            return redirect(reverse("addCharacter"))
+        else:
+            character = Character.objects.create(
+                name = name,
+                iLevel = iLvl,
+                classe = classe,
+                user = user
+            )
+            character.save()
+            messages.success(request, "Your character has been added successfully!")
+            return redirect(reverse("addCharacter"))
 
     context = {"classes" : Classe.objects.all()}    
     return render(request, "guildboard/addcharacter.html", context)   
@@ -88,4 +91,8 @@ def updateChar(request, pk):
     return render(request, "guildboard/updatechar.html", context)
 
 def deleteChar(request, pk):
-    pass
+    
+    char = Character.objects.get(id=pk)
+    char.delete()
+    
+    return redirect("index")
