@@ -44,7 +44,11 @@ def registerView(request):
             messages.success(request, "Account was created for " + user)
             
             return redirect('login')
-
+    else :
+        form = UserCreationForm()
+        context = {"form":form}
+        return render(request, "guildboard/register.html", context)   
+            
     context = {"form":form}
     return render(request, "guildboard/register.html", context)
 

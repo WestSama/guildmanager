@@ -9,6 +9,11 @@ class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ["username", "password1", "password2"]
+        error_messages = {
+            'username': {
+                'unique': 'Username already exists.',
+            },
+        }
 
 class CharacterForm(ModelForm):
     class Meta:
