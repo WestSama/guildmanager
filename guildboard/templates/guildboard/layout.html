@@ -17,7 +17,8 @@
 <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Wizzels</a>
+        <img src="{% static 'guildboard\assets\img\wizzlewd.png' %}" style="width: 50px; border-radius: 25px;" alt="wizzlogo">
+        <a class="navbar-brand ps-3" style="width: 140px;" href="/">Wizzels</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
@@ -53,21 +54,21 @@
                         </a>
                         <div class="sb-sidenav-menu-heading">Interface</div>
                         <a class="nav-link collapsed" href="{% url 'addCharacter' %}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
                             Add Character   
                         </a>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-shield-alt"></i></div>
                             Guilds
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{% url 'wizzels' %}">Wizzels</a>
-                                <a class="nav-link" href="wizzels.html">placeholder</a>
+                                <!-- <a class="nav-link" href="wizzels.html">placeholder</a> -->
                             </nav>
                         </div>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                        <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                             Groups
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -97,12 +98,12 @@
                                     </nav>
                                 </div>
                             </nav>
-                        </div>
+                        </div> -->
                         
                         <div class="sb-sidenav-menu-heading">{% if user.is_superuser %}Addons{% endif %}</div>
                         {% if user.is_superuser %}
                         <a class="nav-link" href="/admin/guildboard/character">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-tools"></i></div>
                             Admin Panel
                         </a>
                         {% endif %}

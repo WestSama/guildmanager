@@ -3,6 +3,8 @@ from .models import *
 # Register your models here.
 class CharacterAdmin(admin.ModelAdmin):
     list_display = ["user", "name", "iLevel", "classe", "guild", "guildRole",]
+    list_filter = ('guild', 'guildRole', "classe")
+    search_fields = ["name"]
 
 
 admin.site.register(Character, CharacterAdmin)
