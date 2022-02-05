@@ -6,6 +6,8 @@ class CharacterAdmin(admin.ModelAdmin):
     list_filter = ('guild', 'guildRole', "classe")
     search_fields = ["name"]
 
+    filter_horizontal = ()
+    fieldsets = ()
 
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(Guild)
