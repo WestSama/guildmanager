@@ -14,4 +14,9 @@ urlpatterns = [
     path("deletechar/<str:pk>/", views.deleteChar, name="deletechar"),
 
     path("wizzels/", views.wizzelsPage, name="wizzels"),
+
+    path("gallery/", views.gallery, name="gallery"),
+    path("image/<str:pk>/", views.viewImage, name="image"),
+    path("addimage/", views.addImage, name="addimage"),
+    path("deleteimage/<str:pk>/", views.deleteImage, name="deleteimage")
 ]

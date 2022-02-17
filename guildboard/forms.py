@@ -19,3 +19,8 @@ class CharacterForm(ModelForm):
     class Meta:
         model = Character
         fields = ["name", "iLevel", "classe"]
+
+class ImageForm(ModelForm):
+    class Meta:
+        model = Image
+        fields = ["image", "description"]
