@@ -1,0 +1,50 @@
+{% extends "guildboard/layout.html" %}
+{% block pageTitle %}Wizzels{% endblock %}
+{% block pageInfo %}Gallery{% endblock %}
+
+{% block title %}Gallery{% endblock %}
+{% load static %}
+
+{% block body %}
+<a href="{% url 'addimage' %}" class="btn btn-dark mb-3">Add Image</a>
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+{% for image in page.object_list %}
+    <div class="card" style="width: 18rem; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+        <img src="{{ image.image.url }}" 
+            class="card-img-top" alt="...">
+        <div class="card-body">
+        <p class="card-text">{{ image.description }} <br><strong>By {{ image.user }}</strong></p>
+        
+        <a href="{% url 'image' image.id %}" class="btn btn-dark">View</a>
+        {% if user == image.user %}
+            <a href="{% url 'deleteimage' image.id %}" class="btn btn-dark">Delete</a>
+        {% endif %}
+        </div>
+    </div>
+{% empty %}
+<h3>No images...</h3>
+{% endfor %}
+</div>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center mt-4">
+        
+        {% if page.has_previous %}
+        <li class="page-item" style="color: black; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"><a class="page-link" style="color: black;" href="?page1">&laquo; First</a></li>
+
+        <li class="page-item" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"><a class="page-link" style="color: black;" href="?page={{ page.previous_page_number }}">Previous</a></li>
+        {% endif %}
+
+        <li class="page-item disabled" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"><a class="page-link">Page {{ page.number }} of {{ page.paginator.num_pages }}</a></li>
+
+        {% if page.has_next %}
+        <li class="page-item " style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"><a style="color: black;" class="page-link" href="?page={{ page.next_page_number }}">Next</a></li>
+
+        <li class="page-item" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"><a class="page-link" style="color: black;" href="?page={{ page.paginator.num_pager}}">Last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+
+      
+ 
+{% endblock %}
