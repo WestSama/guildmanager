@@ -18,7 +18,7 @@ class CreateUserForm(UserCreationForm):
 class CharacterForm(ModelForm):
     class Meta:
         model = Character
-        fields = ["name", "iLevel", "classe"]
+        fields = ["name", "iLevel"]
 
 class ImageForm(ModelForm):
     class Meta:

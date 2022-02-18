@@ -8,14 +8,14 @@
 <form method="POST">
     {% csrf_token %}
     <div class="mb-3">
-        <label for="characterName" class="form-label"><strong>Character Name:</strong></label>
-        <input type="text" class="form-control" name="charName" style="width: 400px;" id="characterName" placeholder="Input your character name...">
+        <label style="color: white;" for="characterName" class="form-label"><strong>Character Name:</strong></label>
+        <input required type="text" class="form-control" name="charName" style="width: 400px;" id="characterName" placeholder="Input your character name...">
     </div>
     <div class="mb-3">
-        <label for="iLevel" class="form-label"><strong>iLevel:</strong></label>
-        <input type="number" class="form-control" name="iLevel" style="width: 400px;" id="iLevel" placeholder="Input your character iLevel...">
+        <label style="color: white;" for="iLevel" class="form-label"><strong>iLevel:</strong></label>
+        <input required type="number" class="form-control" name="iLevel" style="width: 400px;" id="iLevel" placeholder="Input your character iLevel...">
     </div>
-    <label for="formGroupExampleInput2" class="form-label"><strong>Class:</strong></label>
+    <label style="color: white;" for="formGroupExampleInput2" class="form-label"><strong>Class:</strong></label>
     <select name="class" class="form-select mb-3" style="width: 400px;" aria-label="Default select example">
         <option selected disabled>Choose your class...</option>
         {% for class in classes %}

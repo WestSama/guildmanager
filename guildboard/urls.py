@@ -5,16 +5,20 @@ from . import views
 urlpatterns = [
     path("", views.index, name="index"),
 
+    # Login/Register/Logout
     path("login/", views.loginView, name="login"),
     path("register/", views.registerView, name="register"),
     path("logout/", views.logoutView, name="logout"),
 
+    # Character routes
     path("addcharacter/", views.addCharacter, name="addCharacter"),
     path("updatechar/<str:pk>/", views.updateChar, name="updatechar"),
     path("deletechar/<str:pk>/", views.deleteChar, name="deletechar"),
 
-    path("wizzels/", views.wizzelsPage, name="wizzels"),
+    # Guild route
+    path("guild/", views.guildPage, name="guild"),
 
+    # Gallery routes
     path("gallery/", views.gallery, name="gallery"),
     path("image/<str:pk>/", views.viewImage, name="image"),
     path("addimage/", views.addImage, name="addimage"),

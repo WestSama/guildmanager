@@ -29,20 +29,20 @@ class Character(models.Model):
         return f"Owner: {self.user} Name:{self.name} iLevel:{self.iLevel} Class: {self.classe} Guild: {self.guild}"
 
    
-class Content(models.Model):
-    contentName = models.CharField(max_length=64) # ContentName (ex: PvP, GvG, Raid 4man, raid 8 man)
-    
-    def __str__(self):
-        return f"Content Name:{self.contentName}"
-
-class Group(models.Model):
-    groupName = models.CharField(max_length=64)
-    charName = models.ForeignKey(Character, on_delete=models.CASCADE)
-    content = models.ForeignKey(Content, on_delete=models.CASCADE, default="")
-    def __str__(self):
-        return f"Group Name:{self.groupName} Name:{self.charName}"
-
 class Image(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(null=False, blank=False)
     description = models.TextField()
+
+# class Content(models.Model):
+#     contentName = models.CharField(max_length=64) # ContentName (ex: PvP, GvG, Raid 4man, raid 8 man)
+    
+#     def __str__(self):
+#         return f"Content Name:{self.contentName}"
+
+# class Group(models.Model):
+#     groupName = models.CharField(max_length=64)
+#     charName = models.ForeignKey(Character, on_delete=models.CASCADE)
+#     content = models.ForeignKey(Content, on_delete=models.CASCADE, default="")
+#     def __str__(self):
+#         return f"Group Name:{self.groupName} Name:{self.charName}"

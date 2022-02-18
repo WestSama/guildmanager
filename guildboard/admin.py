@@ -11,7 +11,7 @@ class CharacterAdmin(admin.ModelAdmin):
 
 admin.site.register(Character, CharacterAdmin)
 admin.site.register(Guild)
-admin.site.register(Group)
-admin.site.register(Content)
 admin.site.register(Classe)
 admin.site.register(Image)
+# admin.site.register(Group)
+# admin.site.register(Content)

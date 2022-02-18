@@ -1,5 +1,5 @@
 {% extends "guildboard/layout.html" %}
-{% block pageTitle %}Wizzels{% endblock %}
+{% block pageTitle %}Add Image{% endblock %}
 {% block pageInfo %}Add your image{% endblock %}
 
 {% block title %}Gallery: AddImage{% endblock %}
@@ -9,11 +9,11 @@
 <form method="POST" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="mb-3">
-        <label for="description" class="form-label"><strong>Description:</strong></label>
-        <input type="textarea" class="form-control" name="description" style="width: 400px;" id="description" placeholder="Input your description...">
+        <label style="color: white;" for="description" class="form-label"><strong>Description:</strong></label>
+        <input required type="textarea" class="form-control" name="description" style="width: 400px;" id="description" placeholder="Input your description...">
     </div>
     <div class="mb-3">
-        <label for="image" class="form-label"><strong>Image:</strong></label>
+        <label style="color: white;" for="image" class="form-label"><strong>Image:</strong></label>
         <input multiple type="file" class="form-control-file" name="image" style="width: 400px;" id="files">
     </div>
     <button type="submit" class="btn btn-dark m-3">Submit Image</button>

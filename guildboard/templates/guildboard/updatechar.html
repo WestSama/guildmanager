@@ -7,9 +7,9 @@
 {% block body %}
 <form action="" method="POST" style="display: flex; flex-direction: column; width: 400px;">
     {% csrf_token %}
-    <strong>{{ form.name.label }}</strong>
+    <strong style="color: white;">{{ form.name.label }}:</strong>
     {{ form.name }}
-    <strong>{{ form.iLevel.label }}</strong>
+    <strong style="color: white;">{{ form.iLevel.label }}:</strong>
     {{ form.iLevel }}
     <!-- <strong>{{ form.classe.label }}</strong>
     {{ form.classe }} -->
