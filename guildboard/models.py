@@ -34,6 +34,9 @@ class Image(models.Model):
     image = models.ImageField(null=False, blank=False)
     description = models.TextField()
 
+    def __str__(self):
+        return self.user
+
 # class Content(models.Model):
 #     contentName = models.CharField(max_length=64) # ContentName (ex: PvP, GvG, Raid 4man, raid 8 man)
     
