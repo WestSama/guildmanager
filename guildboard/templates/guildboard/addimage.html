@@ -1,0 +1,42 @@
+{% extends "guildboard/layout.html" %}
+{% block pageTitle %}Wizzels{% endblock %}
+{% block pageInfo %}Add your image{% endblock %}
+
+{% block title %}Gallery: AddImage{% endblock %}
+{% load static %}
+
+{% block body %}
+<form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="description" class="form-label"><strong>Description:</strong></label>
+        <input type="textarea" class="form-control" name="description" style="width: 400px;" id="description" placeholder="Input your description...">
+    </div>
+    <div class="mb-3">
+        <label for="image" class="form-label"><strong>Image:</strong></label>
+        <input multiple type="file" class="form-control-file" name="image" style="width: 400px;" id="files">
+    </div>
+    <button type="submit" class="btn btn-dark m-3">Submit Image</button>
+    
+</form>
+<div class="imagePreview"></div>
+<script>
+    let fileInput = document.querySelector('#files');
+    let imagePreview = document.querySelector('.imagePreview');
+
+    const handleFilePreview = (e) => {
+    let files = e.target.files;
+    let length = files.length;
+
+    for(let i = 0; i < length; i++) {
+        let image = document.createElement('img');
+        // use the DOMstring for source
+        image.style = "height: 150px; border: 1px solid #000; margin: 5px;";
+        image.src = window.URL.createObjectURL(files[i]);
+        imagePreview.appendChild(image);
+        }
+    }
+
+    fileInput.addEventListener('change', handleFilePreview);
+</script>
+{% endblock%}

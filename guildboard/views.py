@@ -3,10 +3,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
 from django.contrib import messages
+from django.core.paginator import Paginator
 
-from guildboard.models import Character, Classe
+from guildboard.models import Character, Classe, Image
 
-from .forms import CreateUserForm, CharacterForm
+from .forms import CreateUserForm, CharacterForm, ImageForm
 
 def index(request):
     user = request.user
@@ -107,3 +108,48 @@ def wizzelsPage(request):
     chars = Character.objects.all()
     context = {"chars":chars}
     return render(request, "guildboard/wizzels.html", context)
+
+def gallery(request):
+    images = Image.objects.all().order_by('-id')
+
+    imagePaginator = Paginator(images, 10)
+    page_num = request.GET.get('page')
+    page = imagePaginator.get_page(page_num)
+
+    context = {
+        "images":images,
+        "page": page
+    }
+    return render(request, "guildboard/gallery.html", context)
+
+
+def viewImage(request, pk):
+    image = Image.objects.get(pk=pk)
+    context = {
+        "image":image
+    }
+    return render(request, "guildboard/viewimage.html", context)
+
+def addImage(request):
+    
+    if request.method == "POST":
+        data = request.POST
+        image = request.FILES.get('image')
+        print("image:", image)
+
+        imageData = Image.objects.create(
+            user=request.user,
+            description=data["description"],
+            image=image
+        )
+        imageData.save()  
+        return redirect('gallery')
+    context = {
+        
+    }
+    return render(request, "guildboard/addimage.html", context)
+
+def deleteImage(request, pk):
+    image = Image.objects.get(pk=pk)
+    image.delete()
+    return redirect("gallery")
