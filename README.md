@@ -1,13 +1,5 @@
 ## My Final Project submission for CS50W : Web Programming with Python and Javascript
 
-
-
-<img src="https://i.imgur.com/5ZOXvvK.png" width="90%"></img> 
-<img src="https://i.imgur.com/yEKSD9O.png" width="90%"></img> 
-<img src="https://i.imgur.com/jBQ1xRh.png" width="90%"></img> 
-<img src="https://i.imgur.com/8s4eVag.png" width="90%"></img> 
-<img src="https://i.imgur.com/p88cVnl.png" width="90%"></img> 
-
 ### What is my project?
 
 - For my project I decided to build a Guild Manager App, for a long time i have been playing Online games and wished that one day if i could build a web app to help my Guild i would do it. Since i can remember we been managing our guild members with Excel Sheets or other type of sheet online. With this app i made this process more simple and interactive with also extra features that guild members can use.
