@@ -18,10 +18,10 @@
 
 ### What contains in the app and what is it for?
 
-- Main folder
- - `static/images` - This is where all images from the gallery are uploaded to.
- - `guildmanager` - Where the base settings, like media root and static root, apps are.
- - `manage.py` - To initialize the app.
+- Main folder:
+  - `static/images` - This is where all images from the gallery are uploaded to.
+  - `guildmanager` - Where the base settings, like media root and static root, apps are.
+  - `manage.py` - To initialize the app.
 
  - Guildboard - Where everything done in the app is.
     - `static/guildboard/assets/img` - Where the image for each class character are when we choose what class we add and Logo.
