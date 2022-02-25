@@ -38,13 +38,13 @@
         </div>
         <div style="display: flex; justify-content: center; align-items: flex-end; ">         
                 <a href="{% url 'updatechar' char.id %}" class="btn btn-dark">Edit</a>
-                <button type="button" class="btn btn-dark ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button>
+                <button type="submit" class="btn btn-dark ms-3" data-bs-toggle="modal" data-bs-target="#myModal{{ char.id }}">Delete</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="myModal{{ char.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -56,17 +56,20 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
-        <form action="" method="POST">
-            <a href="{% url 'deletechar' char.id %}" type="submit" class="btn btn-success" >Yes</a>
+        <form action="{% url 'deletechar' char.id %}" method="POST">
+          {% csrf_token %}
+            <button type="submit" class="btn btn-success" >Yes</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+{% empty %}
+<h2 style="color:white;">You have no characters, please select in the left menu "Add Character" to add yours.</h2>
 {% endfor %}
 </div>
 {% endblock %}  
-<footer class="py-4 bg-light mt-auto">
+{% comment %} <footer class="py-4 bg-light mt-auto">
     <div class="container-fluid px-4">
         <div class="d-flex align-items-center justify-content-between small">
             <div class="text-muted">Copyright &copy; Your Website 2021</div>
@@ -78,5 +81,5 @@
         </div>
     </div>
 
-</footer>
+</footer> {% endcomment %}
 </html>

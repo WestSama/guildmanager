@@ -13,7 +13,7 @@ urlpatterns = [
     # Character routes
     path("addcharacter/", views.addCharacter, name="addCharacter"),
     path("updatechar/<str:pk>/", views.updateChar, name="updatechar"),
-    path("deletechar/<str:pk>/", views.deleteChar, name="deletechar"),
+    path("deletechar/<int:pk>/", views.deleteChar, name="deletechar"),
 
     # Guild route
     path("guild/", views.guildPage, name="guild"),

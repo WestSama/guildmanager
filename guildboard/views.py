@@ -105,8 +105,10 @@ def updateChar(request, pk):
 @login_required(login_url='/login/')
 def deleteChar(request, pk):
     
-    char = Character.objects.get(id=pk)
-    char.delete()
+    char = Character.objects.get(pk=pk)
+    if request.method == "POST":
+        char.delete()
+        return redirect("index")
 
     return redirect("index")
 
