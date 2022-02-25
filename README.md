@@ -153,6 +153,6 @@
  
  
 
- Project video showcase:  
+ Project video showcase:  https://www.youtube.com/watch?v=-yMlnCYPhXg
 
  
