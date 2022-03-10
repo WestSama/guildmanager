@@ -6,6 +6,7 @@
 
 - Easy of access and simplistic and intuitive UI
 - Characters that link to accounts that link to a Database, separate guilds pages to manage more than one.
+- Simple admin and easy understand admin panel.
  
 
 ### What is my project? 
