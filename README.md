@@ -9,60 +9,6 @@
 - Simple admin and easy understand admin panel.
  
 
-### What is my project? 
-
- - The project idea came to me by necessity. After spending a considerate amount of time in searching for a webapp, I either did not find one to better facilitate networking within a gaming community and easier group finding or the ones that I did find, had limited capabilities and basic functionality. Therefore the idea for the project was to create a more complex webapp but also keep it simplistic in UI design which I believe will make it distinct from the other similar platforms.
-
-- For my project I decided to build a Guild Manager App, for a long time I have been playing Online games and wished that one day if I could build a web app to help my Guild I would do it. Since I can remember we been managing our guild members with Excel Sheets or other type of sheet online. With this app I made this process simpler and more interactive with also extra features that guild members can use. 
-
- 
- 
-
-- This project is built with Django as backend and HTML/CSS/JavaScript/Bootstrap 5 Admin DashBoard in the frontend. 
-
- 
- 
-
-- Your guild members are able to create their own account and add their character to the WebApp choose their class and item level will automatically add image to the respective class, they can check current guild members and staff, only staff member has access to the admin panel where they can choose what guild the character will go, also have access a gallery to showcase your best achievements in the game. 
-
- 
- 
-
-### Main View 
-
-<img src="https://i.imgur.com/5ZOXvvK.png" width="90%"></img>  
-
- 
- 
-
-### Guild Members 
-
-<img src="https://i.imgur.com/yEKSD9O.png" width="90%"></img>  
-
- 
- 
-
-### Gallery 
-
-<img src="https://i.imgur.com/jBQ1xRh.png" width="90%"></img> 
-
- 
- 
-
-### Add Character 
-
-<img src="https://i.imgur.com/p88cVnl.png" width="90%"></img>  
-
- 
- 
-
-### Admin Panel 
-
-<img src="https://i.imgur.com/8s4eVag.png" width="90%"></img>  
-
- 
- 
-
 ### Installation: 
 
  
@@ -155,6 +101,56 @@
 
     - `views.py` - All the views code and backend logic. 
 
+### What is my project? 
+
+ - The project idea came to me by necessity. After spending a considerate amount of time in searching for a webapp, I either did not find one to better facilitate networking within a gaming community and easier group finding or the ones that I did find, had limited capabilities and basic functionality. Therefore the idea for the project was to create a more complex webapp but also keep it simplistic in UI design which I believe will make it distinct from the other similar platforms.
+
+- For my project I decided to build a Guild Manager App, for a long time I have been playing Online games and wished that one day if I could build a web app to help my Guild I would do it. Since I can remember we been managing our guild members with Excel Sheets or other type of sheet online. With this app I made this process simpler and more interactive with also extra features that guild members can use. 
+
+ 
+ 
+
+- This project is built with Django as backend and HTML/CSS/JavaScript/Bootstrap 5 Admin DashBoard in the frontend. 
+
+ 
+ 
+
+- Your guild members are able to create their own account and add their character to the WebApp choose their class and item level will automatically add image to the respective class, they can check current guild members and staff, only staff member has access to the admin panel where they can choose what guild the character will go, also have access a gallery to showcase your best achievements in the game. 
+
+ 
+ 
+
+### Main View 
+
+<img src="https://i.imgur.com/5ZOXvvK.png" width="90%"></img>  
+
+ 
+ 
+
+### Guild Members 
+
+<img src="https://i.imgur.com/yEKSD9O.png" width="90%"></img>  
+
+ 
+ 
+
+### Gallery 
+
+<img src="https://i.imgur.com/jBQ1xRh.png" width="90%"></img> 
+
+ 
+ 
+
+### Add Character 
+
+<img src="https://i.imgur.com/p88cVnl.png" width="90%"></img>  
+
+ 
+ 
+
+### Admin Panel 
+
+<img src="https://i.imgur.com/8s4eVag.png" width="90%"></img>  
  
  
 
