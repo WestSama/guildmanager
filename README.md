@@ -2,11 +2,15 @@
 
  
  
+### Distinctiveness and Complexity:
+
+- Easy of access and simplistic and intuitive UI
+- Characters that link to accounts that link to a Database, separate guilds pages to manage more than one.
+ 
 
 ### What is my project? 
 
- 
- 
+ - The project idea came to me by necessity. After spending a considerate amount of time in searching for a webapp, I either did not find one to better facilitate networking within a gaming community and easier group finding or the ones that I did find, had limited capabilities and basic functionality. Therefore the idea for the project was to create a more complex webapp but also keep it simplistic in UI design which I believe will make it distinct from the other similar platforms.
 
 - For my project I decided to build a Guild Manager App, for a long time I have been playing Online games and wished that one day if I could build a web app to help my Guild I would do it. Since I can remember we been managing our guild members with Excel Sheets or other type of sheet online. With this app I made this process simpler and more interactive with also extra features that guild members can use. 
 
