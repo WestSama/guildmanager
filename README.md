@@ -105,7 +105,7 @@
 ### What is my project? 
 
 
-- For my project I decided to build a Guild Manager App, for a long time I have been playing Online games and wished that one day if I could build a web app to help my Guild I would do it. Since I can remember we been managing our guild members with Excel Sheets or other type of sheet online. With this app I made this process simpler and more interactive with also extra features that guild members can use. 
+- THe project's goal is to provide a better platform for guild managers. From my gaming experience I have noticed many guildmasters using excel spreadsheet to organize groups and keep track of guild members.This app makes the process simpler and more interactive with extra features that guild members can use. Also, it provides social value and networking within the community using a clean user interface and providing members to share their achievements, screenshots and another gaming memories.
 
  
  
@@ -115,7 +115,7 @@
  
  
 
-- Your guild members are able to create their own account and add their character to the WebApp choose their class and item level will automatically add image to the respective class, they can check current guild members and staff, only staff member has access to the admin panel where they can choose what guild the character will go, also have access a gallery to showcase your best achievements in the game. 
+- Guild members are able to create their own account and add their character to the WebApp, choose their class and item level which will automatically update and assign an image to the respective class. Staff with administrative privilieges have access to the admin panel where they can choose which guild the character will be assigned and also have access a gallery to showcase their best achievements in the game. 
 
  
  
